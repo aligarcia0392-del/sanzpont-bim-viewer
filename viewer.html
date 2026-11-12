@@ -27,12 +27,17 @@ h2{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--mute
 .sw{width:12px;height:12px;border-radius:3px;border:1px solid rgba(0,0,0,.15);flex:none}
 .lvl{display:flex;justify-content:space-between;width:100%}
 .lvl .z{font-family:'IBM Plex Mono',monospace;color:var(--mute);font-size:11.5px}
-input[type=range]{width:100%;accent-color:var(--acc)}
+input[type=range]{width:100%;-webkit-appearance:none;appearance:none;height:18px;background:transparent;margin:0;--p:100%}
+input[type=range]::-webkit-slider-runnable-track{height:4px;border-radius:2px;background:linear-gradient(to right,#5f666e 0,#5f666e var(--p),#d6d3cc var(--p),#d6d3cc 100%)}
+input[type=range]::-moz-range-track{height:4px;border-radius:2px;background:#d6d3cc}
+input[type=range]::-moz-range-progress{height:4px;border-radius:2px;background:#5f666e}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:16px;height:16px;border-radius:50%;background:#e9eaec;border:1.5px solid #8b9198;box-shadow:0 1px 3px rgba(0,0,0,.18);margin-top:-6px;cursor:pointer}
+input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:#e9eaec;border:1.5px solid #8b9198;box-shadow:0 1px 3px rgba(0,0,0,.18);cursor:pointer}
 .btns{display:flex;gap:6px;flex-wrap:wrap}
 button{font:inherit;font-size:12px;border:1px solid var(--line);background:#fff;border-radius:6px;padding:6px 10px;cursor:pointer;color:var(--ink)}
 button:hover{border-color:#b9b3a6}
 button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
-.val{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--acc)}
+.val{font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5f666e}
 .note summary{cursor:pointer;color:var(--ink);font-weight:500}
 .note{font-size:11.5px;color:var(--mute);line-height:1.45;border-top:1px solid var(--line);padding:10px 16px}
 #fpsw{position:fixed;left:342px;top:12px;display:none;align-items:center;gap:6px;background:rgba(29,33,37,.82);color:#e9e6df;border-radius:6px;padding:4px 9px;font-family:'IBM Plex Mono',monospace;font-size:11px;pointer-events:none}
@@ -243,6 +248,6 @@ body.mob .tiles{grid-template-columns:1fr 1fr}
 <aside id="qpanel"><header><div><h1 id="qtitle">Cuantificación</h1><div class="sub" id="qsub">Resumen general del proyecto</div></div><button id="qmin" title="Ocultar panel">–</button></header><div class="scroll" id="qbody"></div></aside>
 <button id="qtab">Cuantificación ◂</button>
 <nav id="mbar"><button class="backm" onclick="location.href='./'" title="Proyectos">←</button><button data-s="panel">☰ Capas</button><button data-s="model">Modelo</button><button data-s="q">Cantidades</button><button data-s="sb">Section box</button></nav>
-<script type="module" src="viewer.js?v=641ced89c9"></script>
+<script type="module" src="viewer.js?v=23ddb2ca12"></script>
 </body>
 </html>
