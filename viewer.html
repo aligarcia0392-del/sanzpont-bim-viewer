@@ -181,10 +181,11 @@ body.mob #plan{left:4px;right:4px!important;bottom:60px}
 body.mob .tiles{grid-template-columns:1fr 1fr}
 #sbtog.on{background:var(--acc);color:#fff;border-color:var(--acc)}
 
-#mbox{position:fixed;top:12px;right:354px;width:300px;background:var(--panel);border:1px solid var(--line);border-radius:10px;box-shadow:0 6px 24px rgba(0,0,0,.08);z-index:6;font-size:12px;overflow:hidden}
-#mbox .mh{display:flex;align-items:center;gap:8px;padding:9px 11px}
+#mbox{position:fixed;top:12px;border-radius:6px!important;right:354px;width:300px;background:var(--panel);border:1px solid var(--line);border-radius:10px;box-shadow:0 6px 24px rgba(0,0,0,.08);z-index:6;font-size:12px;overflow:hidden}
+#mbox .mh{display:flex;align-items:center;gap:8px;padding:0 3px 0 10px;height:27px}
 #mbox .mh b{font-size:10.5px;letter-spacing:.06em;color:var(--mute);text-transform:uppercase}
-#mbox select{flex:1;min-width:0;font:inherit;font-size:12.5px;font-weight:500;padding:5px 6px;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink)}
+#mbox select{flex:1;min-width:0;font:inherit;font-size:12px;font-weight:500;height:22px;padding:0 4px;border:1px solid var(--line);border-radius:5px;background:#fff;color:var(--ink)}
+#mbox .mx{height:22px;padding:0 7px;font-size:11px;line-height:1}
 #mbox .mx{padding:0 6px}
 #minfo{border-top:1px solid var(--line);padding:9px 11px;max-height:52vh;overflow:auto}
 #minfo .mt{font-weight:600;font-size:13px}
@@ -233,7 +234,7 @@ body.mob .tiles{grid-template-columns:1fr 1fr}
   </div>
   <details class="note"><summary>Sobre este modelo</summary>Proyecto con varios IFC de Revit que se ven uno a la vez desde el menú «Modelo» (Core &amp; Shell define los niveles). Los niveles auxiliares Terreno, Nivel 8 y Nivel 6 se asignaron a Planta Baja y Azotea. Clasificación por clase IFC y tipo de Revit. Cantidades calculadas desde la geometría. Las piezas muy pesadas (bambú) se simplificaron para la vista 3D. El mobiliario se muestra con modelos de sustitución dentro de las medidas de cada pieza original; la ambientación de render (Enscape) se eliminó.</details>
 </aside>
-<div id="hud">—</div>
+<div id="hud" style="display:none!important">—</div>
 <div id="fpsw"><span id="fps">—</span><button id="fpsx" title="Ocultar">×</button></div><button id="fpsb" title="Mostrar información gráfica">FPS</button>
 <div id="tip"></div>
 <div id="props"><header><b id="ptit">—</b><button id="pclose2">×</button></header><div class="pa"><button id="piso">Aislar su tipología</button><button id="pzoom">Acercar</button></div><table id="ptab"></table></div>
@@ -242,6 +243,6 @@ body.mob .tiles{grid-template-columns:1fr 1fr}
 <aside id="qpanel"><header><div><h1 id="qtitle">Cuantificación</h1><div class="sub" id="qsub">Resumen general del proyecto</div></div><button id="qmin" title="Ocultar panel">–</button></header><div class="scroll" id="qbody"></div></aside>
 <button id="qtab">Cuantificación ◂</button>
 <nav id="mbar"><button class="backm" onclick="location.href='./'" title="Proyectos">←</button><button data-s="panel">☰ Capas</button><button data-s="model">Modelo</button><button data-s="q">Cantidades</button><button data-s="sb">Section box</button></nav>
-<script type="module" src="viewer.js?v=217f041ddf"></script>
+<script type="module" src="viewer.js?v=8424c24a59"></script>
 </body>
 </html>
