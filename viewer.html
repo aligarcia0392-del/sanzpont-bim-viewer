@@ -204,8 +204,17 @@ body.mob #qpanel h1,body.mob #qpanel .qh h2{font-size:15px}
 #mbox select{flex:1;min-width:0;font:inherit;font-size:12px;font-weight:500;height:22px;padding:0 4px;border:1px solid var(--line);border-radius:5px;background:#fff;color:var(--ink)}
 #mbox .mx{height:22px;padding:0 7px;font-size:11px;line-height:1}
 #mbox .mx{padding:0 6px}
-#minfo{border-top:1px solid var(--line);padding:9px 11px;max-height:52vh;overflow:auto;transition:max-height .32s cubic-bezier(.2,.8,.2,1),opacity .22s ease,padding .32s cubic-bezier(.2,.8,.2,1)}
+#minfo{border-top:1px solid var(--line);padding:9px 11px;max-height:52vh;overflow:auto;transition:max-height .2s cubic-bezier(.2,.8,.2,1),opacity .14s ease,padding .2s cubic-bezier(.2,.8,.2,1)}
 body.notrans *{transition:none!important}
+#vbub{display:none}
+body.mob #vbub{display:flex;flex-direction:column;position:fixed;right:calc(10px + var(--sr));top:calc(var(--st) + 62px);z-index:5;gap:2px;padding:5px;border-radius:24px;background:rgba(252,252,250,.58);border:1px solid rgba(255,255,255,.75);box-shadow:0 8px 26px rgba(20,24,28,.14),inset 0 1px 0 rgba(255,255,255,.85);-webkit-backdrop-filter:blur(22px) saturate(1.8);backdrop-filter:blur(22px) saturate(1.8)}
+body.mob #vbub .vb{width:40px;height:40px;margin:0;padding:0;border:0;border-radius:20px;background:transparent;display:flex;align-items:center;justify-content:center;color:#4f555c;transition:background .15s}
+body.mob #vbub .vb svg{width:21px;height:21px}
+body.mob #vbub .vb.on{background:rgba(30,33,37,.1);color:var(--ink)}
+body.mob .vrow,body.mob .vrow+*{}
+body.mob h2.vh,body.mob .vrow{display:none}
+body.leaving #mbox,body.leaving #mbar,body.leaving #vbub,body.leaving #panel,body.leaving #qpanel,body.leaving #props,body.leaving canvas{opacity:0;transition:opacity .12s ease!important}
+
 #minfo.closed{max-height:0!important;opacity:0;padding-top:0;padding-bottom:0;border-top-color:transparent;overflow:hidden}
 #qcat{margin-left:auto;padding:3px 10px;font-size:12px;white-space:nowrap;border-radius:7px}
 #qcat.on{background:var(--ink);color:#fff;border-color:var(--ink)}
@@ -243,7 +252,7 @@ body.notrans *{transition:none!important}
     <div class="prow"><select id="ptype"><option value="P">Planta (corte a +1.20 m)</option></select><select id="plvl"></select></div>
     <div class="btns" style="margin-top:7px"><button id="popen">Abrir plano</button></div>
     <div class="hint" style="margin-top:6px">Se generan cortando el modelo IFC en cada nivel y se actualizan en vivo con el montaje, la visibilidad y el aislamiento.</div>
-    </div><h2>Vistas</h2>
+    </div><h2 class="vh">Vistas</h2>
     <div class="vrow">
       <button data-v="iso" class="icb" title="Isométrica"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M12 3 20 7.5v9L12 21l-8-4.5v-9Z"/><path d="M4 7.5 12 12l8-4.5M12 12v9"/></svg></button>
       <button data-v="top" class="icb" title="Planta (vista superior)"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="1.5"/><rect x="4" y="4" width="16" height="16" rx="1.5" fill="currentColor" opacity=".18" stroke="none"/><path d="M12 8v8M8 12h8" stroke-linecap="round"/></svg></button>
@@ -261,10 +270,16 @@ body.notrans *{transition:none!important}
 <div id="tip"></div>
 <div id="props"><header><b id="ptit">—</b><button id="pclose2">×</button></header><div class="pa"><button id="piso">Aislar su tipología</button><button id="pzoom">Acercar</button></div><table id="ptab"></table></div>
 <div id="plan"><div class="pbar"><b id="ptitle"></b><span style="flex:1"></span><button id="pzin">+</button><button id="pzout">−</button><button id="pfit">Ajustar</button><button id="pclose">Cerrar ✕</button></div><svg id="psvg" viewBox="0 0 841 594" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"></svg></div>
+<div id="vbub">
+      <button data-v="iso" class="vb" title="Isométrica"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M12 3 20 7.5v9L12 21l-8-4.5v-9Z"/><path d="M4 7.5 12 12l8-4.5M12 12v9"/></svg></button>
+      <button data-v="top" class="vb" title="Planta (vista superior)"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="1.5"/><rect x="4" y="4" width="16" height="16" rx="1.5" fill="currentColor" opacity=".18" stroke="none"/><path d="M12 8v8M8 12h8" stroke-linecap="round"/></svg></button>
+      <button data-v="front" class="vb" title="Frente"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M12 3 20 7.5v9L12 21l-8-4.5v-9Z" opacity=".45"/><path d="M4 7.5 12 12v9l-8-4.5Z" fill="currentColor" fill-opacity=".3"/></svg></button>
+      <button data-v="side" class="vb" title="Lateral"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M12 3 20 7.5v9L12 21l-8-4.5v-9Z" opacity=".45"/><path d="M20 7.5 12 12v9l8-4.5Z" fill="currentColor" fill-opacity=".3"/></svg></button>
+    </div>
 <div id="mbox"><div class="mh"><b>Modelo</b><select id="msel"></select><button class="mx" id="mmin" title="Mostrar u ocultar la información">▾</button></div><div id="minfo" class="closed"></div></div>
 <aside id="qpanel"><header><div><h1 id="qtitle">Cuantificación</h1><div class="sub" id="qsub">Resumen general del proyecto</div></div><button id="qcat" title="Catálogo de conceptos">Catálogo</button><button id="qmin" title="Ocultar panel">–</button></header><div class="scroll" id="qbody"></div></aside>
 <button id="qtab">Cuantificación ◂</button>
-<nav id="mbar"><button class="backm" onclick="location.href='./'" title="Proyectos"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg><span>Proyectos</span></button><button data-s="panel"><svg viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 13 9 5 9-5"/></svg><span>Capas</span></button><button data-s="model"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 13h8M8 16h5"/></svg><span>Modelo</span></button><button data-s="q"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span>Cantidades</span></button><button data-s="sb"><svg viewBox="0 0 24 24"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5Z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg><span>Section box</span></button></nav>
-<script type="module" src="viewer.js?v=afea60cd5b"></script>
+<nav id="mbar"><button class="backm" onclick="document.body.classList.add('leaving');setTimeout(()=>location.href='./',110)" title="Proyectos"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg><span>Proyectos</span></button><button data-s="panel"><svg viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 13 9 5 9-5"/></svg><span>Capas</span></button><button data-s="model"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 13h8M8 16h5"/></svg><span>Modelo</span></button><button data-s="q"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span>Cantidades</span></button><button data-s="sb"><svg viewBox="0 0 24 24"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5Z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg><span>Section box</span></button></nav>
+<script type="module" src="viewer.js?v=b4d134998f"></script>
 </body>
 </html>
