@@ -23,6 +23,9 @@ input,select,textarea{font-size:16px!important}
 .msg{margin-top:12px;font-size:13px;color:#8a3b10;min-height:1em}
 header.top{display:flex;justify-content:space-between;align-items:center;padding:calc(14px + env(safe-area-inset-top)) 22px 14px;border-bottom:1px solid var(--line);background:var(--panel);position:sticky;top:0}
 .brand{white-space:nowrap} @media (max-width:600px){header.top{padding-left:calc(16px + env(safe-area-inset-left));padding-right:calc(16px + env(safe-area-inset-right))} .who .em{display:none} .list{padding:6px 16px 60px}}
+#ptr{position:fixed;left:50%;top:calc(env(safe-area-inset-top) + 8px);z-index:20;width:36px;height:36px;border-radius:18px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.75);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:0 4px 14px rgba(0,0,0,.12);transform:translate(-50%,-50px);opacity:0;transition:transform .2s,opacity .2s;pointer-events:none}
+#ptr svg{width:18px;height:18px;fill:none;stroke:#5f666e;stroke-width:2;stroke-linecap:round;stroke-linejoin:round} #ptr.ready svg{stroke:#1d2125}
+#ptr.spin svg{animation:ptrs .8s linear infinite} @keyframes ptrs{to{transform:rotate(360deg)}}
 .who{font-size:12.5px;color:var(--mute);display:flex;gap:10px;align-items:center} .who button{padding:5px 10px;font-size:12px}
 .list{max-width:1000px;margin:0 auto;padding:10px 22px 60px} .list h2{font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--mute);margin:26px 0 10px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
@@ -42,4 +45,4 @@ header.top{display:flex;justify-content:space-between;align-items:center;padding
 .lk{display:flex;gap:6px} .lk input{font-size:12px}
 .off{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:12px;border-top:1px solid var(--line);padding-top:8px} .off button{padding:5px 10px;font-size:12px} .okd{color:#2f6b2c;flex:1}
 .offbar{background:#fff3e6;color:#8a3b10;font-size:12.5px;padding:8px 22px;border-bottom:1px solid #f0d9c2}
-</style></head><body><div id="app"></div><script type="module" src="shell.js?v=1bca5a8ebb"></script></body></html>
+</style></head><body><div id="app"></div><script type="module" src="shell.js?v=e903ae3047"></script></body></html>
