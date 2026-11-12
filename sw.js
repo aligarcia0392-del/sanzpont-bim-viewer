@@ -1,7 +1,7 @@
 // Service worker de Sanzpont BIM Viewer: guarda el programa del visor para abrirlo sin conexión.
 // Estrategia: red primero (así siempre llega la última versión) y, si no hay red, la copia guardada.
 // Las peticiones a Supabase (cuentas y modelos) no pasan por aquí; los modelos se guardan en IndexedDB.
-const CACHE = 'sanzpont-app-9a8e69faf20d';
+const CACHE = 'sanzpont-app-f337afa1098b';
 const SHELL = ['./', './index.html', './viewer.html', './viewer.js', './shell.js', './version.json',
   './fonts/ibm-plex-sans-400.woff2', './fonts/ibm-plex-sans-500.woff2', './fonts/ibm-plex-sans-600.woff2',
   './fonts/ibm-plex-mono-400.woff2', './fonts/ibm-plex-mono-500.woff2'];
