@@ -167,24 +167,29 @@ h2.sbh #sbfit{font-size:11.5px;padding:0 10px}
 h2.sbh #sbtog{width:34px;padding:0}
 #clrsel2{display:none;margin-left:auto;font-size:11px;padding:2px 8px;align-items:center;gap:4px}
 #mbar{display:none}
-body.mob{--st:env(safe-area-inset-top,0px);--sl:env(safe-area-inset-left,0px);--sr:env(safe-area-inset-right,0px);--sb:max(6px,calc(env(safe-area-inset-bottom,0px) - 16px));--bh:calc(54px + var(--sb))}
-body.mob #mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:8;gap:2px;padding:4px calc(6px + var(--sr)) var(--sb) calc(6px + var(--sl));background:rgba(251,250,247,.97);border-top:1px solid var(--line);box-shadow:0 -4px 16px rgba(0,0,0,.05);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
-body.mob #mbar button{flex:1;margin:0;padding:5px 0 4px;font-size:10px;line-height:1.1;border:0;background:transparent;border-radius:10px;white-space:nowrap;display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--mute);min-height:46px;justify-content:center}
+body.mob{--st:env(safe-area-inset-top,0px);--sl:env(safe-area-inset-left,0px);--sr:env(safe-area-inset-right,0px);--sb:max(12px,calc(env(safe-area-inset-bottom,0px) - 4px));--bh:calc(62px + var(--sb))}
+body.mob #mbar{display:flex;position:fixed;left:calc(12px + var(--sl));right:calc(12px + var(--sr));bottom:var(--sb);z-index:8;gap:2px;padding:5px;border-radius:28px;background:rgba(252,252,250,.58);border:1px solid rgba(255,255,255,.75);box-shadow:0 10px 34px rgba(20,24,28,.16),inset 0 1px 0 rgba(255,255,255,.85),inset 0 -1px 0 rgba(0,0,0,.04);-webkit-backdrop-filter:blur(22px) saturate(1.8);backdrop-filter:blur(22px) saturate(1.8)}
+body.mob #mbar button{flex:1;margin:0;padding:5px 0 4px;font-size:10px;line-height:1.1;border:0;background:transparent;border-radius:22px;white-space:nowrap;display:flex;flex-direction:column;align-items:center;gap:3px;color:#4f555c;min-height:46px;justify-content:center;transition:background .2s}
 body.mob #mbar button svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-body.mob #mbar button.on{background:#e7e5e0;color:var(--ink)}
-body.mob #mbar .backm{flex:0 0 46px}
+body.mob #mbar button.on{background:rgba(30,33,37,.09);color:var(--ink)}
+body.mob #mbar .backm{flex:0 0 52px}
 body.mob #panel{display:none;left:calc(6px + var(--sl));right:calc(6px + var(--sr));top:auto;bottom:calc(var(--bh) + 6px);height:auto;max-height:min(56vh,calc(100vh - var(--bh) - var(--st) - 70px));width:auto;z-index:7;border-radius:14px;font-size:12.5px}
 body.mob #panel.open{display:flex}
+body.mob #panel,body.mob #qpanel,body.mob #props{background:rgba(251,250,247,.9);-webkit-backdrop-filter:blur(18px) saturate(1.5);backdrop-filter:blur(18px) saturate(1.5);border:1px solid rgba(255,255,255,.7);box-shadow:0 12px 40px rgba(20,24,28,.16);border-radius:20px}
 body.mob #panel header{padding:10px 14px 8px}
 body.mob #panel header h1{font-size:15px}
 body.mob #panel .sec{padding:8px 14px}
 body.mob #qpanel{left:calc(6px + var(--sl));right:calc(6px + var(--sr));top:auto;bottom:calc(var(--bh) + 6px);height:auto;max-height:min(60vh,calc(100vh - var(--bh) - var(--st) - 70px));width:auto!important;z-index:7;border-radius:14px;font-size:12px}
 body.mob #qtab,body.mob #fpsb,body.mob #fpsw,body.mob #tip{display:none!important}
 body.mob #hud{left:8px;right:auto;bottom:calc(var(--bh) + 8px);font-size:10.5px;padding:4px 8px;min-width:0;opacity:.85}
-body.mob #mbox{left:calc(8px + var(--sl));right:calc(8px + var(--sr))!important;top:calc(4px + var(--st));width:auto;z-index:6;border-radius:12px!important;font-size:12px}
-body.mob #mbox .mh{padding:4px 6px 4px 10px;min-height:36px;box-sizing:border-box}
+body.mob #mbox{left:0;right:0!important;top:0;width:auto;z-index:6;border-radius:0 0 22px 22px!important;font-size:12px;padding-top:var(--st);background:rgba(252,252,250,.6);border:0;border-bottom:1px solid rgba(255,255,255,.75);box-shadow:0 8px 30px rgba(20,24,28,.12),inset 0 -1px 0 rgba(0,0,0,.04);-webkit-backdrop-filter:blur(22px) saturate(1.8);backdrop-filter:blur(22px) saturate(1.8)}
+body.mob #mbox .mh{padding:4px calc(12px + var(--sr)) 8px calc(16px + var(--sl));min-height:40px;box-sizing:border-box}
+body.mob #mbox select{background:rgba(255,255,255,.7);border-color:rgba(0,0,0,.08);height:30px;border-radius:9px}
+body.mob #mbox .mx{height:30px;width:32px;border-radius:9px;background:rgba(255,255,255,.7)}
+body.mob #minfo{padding-left:calc(14px + var(--sl));padding-right:calc(14px + var(--sr));border-top-color:rgba(0,0,0,.06)}
+body.mob #minfo .mc{background:rgba(255,255,255,.55)}
 body.mob #mbox select{font-size:14px}
-body.mob #minfo{max-height:min(46vh,calc(100vh - var(--st) - var(--bh) - 80px));overflow:auto}
+body.mob #minfo{max-height:min(38vh,calc(100vh - var(--st) - var(--bh) - 80px));overflow:auto}
 body.mob #props{left:calc(6px + var(--sl));right:calc(6px + var(--sr));bottom:calc(var(--bh) + 6px);width:auto;max-height:42vh;z-index:7;border-radius:14px}
 body.mob #plan{left:4px;right:4px!important;bottom:calc(var(--bh) + 4px)}
 body.mob .tiles{grid-template-columns:1fr 1fr;gap:6px}
@@ -199,7 +204,10 @@ body.mob #qpanel h1,body.mob #qpanel .qh h2{font-size:15px}
 #mbox select{flex:1;min-width:0;font:inherit;font-size:12px;font-weight:500;height:22px;padding:0 4px;border:1px solid var(--line);border-radius:5px;background:#fff;color:var(--ink)}
 #mbox .mx{height:22px;padding:0 7px;font-size:11px;line-height:1}
 #mbox .mx{padding:0 6px}
-#minfo{border-top:1px solid var(--line);padding:9px 11px;max-height:52vh;overflow:auto}
+#minfo{border-top:1px solid var(--line);padding:9px 11px;max-height:52vh;overflow:auto;transition:max-height .32s cubic-bezier(.2,.8,.2,1),opacity .22s ease,padding .32s cubic-bezier(.2,.8,.2,1)}
+#minfo.closed{max-height:0!important;opacity:0;padding-top:0;padding-bottom:0;border-top-color:transparent;overflow:hidden}
+#qcat{margin-left:auto;padding:3px 10px;font-size:12px;white-space:nowrap;border-radius:7px}
+#qcat.on{background:var(--ink);color:#fff;border-color:var(--ink)}
 #minfo .mt{font-weight:600;font-size:13px}
 #minfo .ms{color:var(--mute);font-size:11px;margin:2px 0 8px}
 #minfo .mg{display:grid;grid-template-columns:1fr 1fr;gap:5px}
@@ -252,9 +260,9 @@ body.mob #qpanel h1,body.mob #qpanel .qh h2{font-size:15px}
 <div id="props"><header><b id="ptit">—</b><button id="pclose2">×</button></header><div class="pa"><button id="piso">Aislar su tipología</button><button id="pzoom">Acercar</button></div><table id="ptab"></table></div>
 <div id="plan"><div class="pbar"><b id="ptitle"></b><span style="flex:1"></span><button id="pzin">+</button><button id="pzout">−</button><button id="pfit">Ajustar</button><button id="pclose">Cerrar ✕</button></div><svg id="psvg" viewBox="0 0 841 594" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"></svg></div>
 <div id="mbox"><div class="mh"><b>Modelo</b><select id="msel"></select><button class="mx" id="mmin" title="Mostrar u ocultar la información">▾</button></div><div id="minfo"></div></div>
-<aside id="qpanel"><header><div><h1 id="qtitle">Cuantificación</h1><div class="sub" id="qsub">Resumen general del proyecto</div></div><button id="qmin" title="Ocultar panel">–</button></header><div class="scroll" id="qbody"></div></aside>
+<aside id="qpanel"><header><div><h1 id="qtitle">Cuantificación</h1><div class="sub" id="qsub">Resumen general del proyecto</div></div><button id="qcat" title="Catálogo de conceptos">Catálogo</button><button id="qmin" title="Ocultar panel">–</button></header><div class="scroll" id="qbody"></div></aside>
 <button id="qtab">Cuantificación ◂</button>
 <nav id="mbar"><button class="backm" onclick="location.href='./'" title="Proyectos"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg><span>Proyectos</span></button><button data-s="panel"><svg viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 13 9 5 9-5"/></svg><span>Capas</span></button><button data-s="model"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 13h8M8 16h5"/></svg><span>Modelo</span></button><button data-s="q"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span>Cantidades</span></button><button data-s="sb"><svg viewBox="0 0 24 24"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5Z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg><span>Section box</span></button></nav>
-<script type="module" src="viewer.js?v=23ddb2ca12"></script>
+<script type="module" src="viewer.js?v=121e662810"></script>
 </body>
 </html>
