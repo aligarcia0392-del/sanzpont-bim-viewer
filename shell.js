@@ -44,7 +44,7 @@ ${w}`}var R=class extends Error{constructor({message:e,code:t,cause:s,name:n}){v
       <div class="ca"><button class="pri open">Abrir</button>${u.owner_id===e.id&&!n?'<button class="share">Compartir</button>':""}</div>
       <div class="off">${i.has(u.id)?`<span class="okd">${a[u.id]?"\u27F3 Hay una versi\xF3n nueva":"\u2713 Disponible sin conexi\xF3n"}</span>${n?"":`${a[u.id]?'<button class="dl">Actualizar</button>':""}<button class="rm">Quitar</button>`}`:n?"":'<button class="dl">\u2913 Descargar para uso sin conexi\xF3n</button>'}</div></div>`;kr.innerHTML=`
   <header class="top"><div class="brand"><span class="logo">\u25C6</span><b>Sanzpont</b> BIM Viewer</div>
-    <div class="who">${Le(e.email)} <button id="out">Salir</button></div></header>
+    <div class="who"><span class="em">${Le(e.email)}</span> <button id="out">Salir</button></div></header>
   ${n?'<div class="offbar">Sin conexi\xF3n \xB7 solo se muestran los proyectos guardados en este dispositivo</div>':""}
   <main class="list">
     <h2>Mis proyectos</h2>
