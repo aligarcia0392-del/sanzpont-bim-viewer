@@ -217,16 +217,17 @@ body.mob #vbub .vsb.on{background:var(--ink);color:#fff}
 body.mob #mmin{display:none!important}
 @media (orientation:landscape){
 body.mob{--bh:0px}
-body.mob #mbox{left:max(10px,calc(var(--sl) - 34px));right:auto!important;top:10px;width:min(330px,42vw);padding-top:0;border-radius:18px!important;border:1px solid rgba(255,255,255,.55)}
+body.mob #mbox{left:max(10px,calc(var(--sl) - 34px));right:auto!important;top:20px;width:min(240px,32vw);padding-top:0;border-radius:18px!important;border:1px solid rgba(255,255,255,.55)}
 body.mob #mbox .mh{padding:6px 8px 6px 12px;min-height:40px}
-body.mob #minfo{max-height:calc(100vh - 175px);padding-left:12px;padding-right:12px}
-body.mob #mbar{left:auto;right:max(10px,calc(var(--sr) - 34px));top:50%;bottom:auto;transform:translateY(-50%);flex-direction:column;justify-content:space-around;gap:6px;padding:8px 5px;max-width:none;height:min(330px,calc(100vh - 20px));max-height:calc(100vh - 20px);border-radius:32px}
-body.mob #mbar button,body.mob #mbar .backm{width:66px;min-height:58px;flex:1 1 0;gap:4px}
-body.mob #vbub{left:max(10px,calc(var(--sl) - 34px));right:auto;top:auto;bottom:max(10px,calc(env(safe-area-inset-bottom,0px) - 6px))}
+body.mob #minfo{max-height:calc(100vh - 200px);padding-left:12px;padding-right:12px}
+body.mob #mbox:has(#minfo:not(.closed)){width:min(330px,42vw)}
+body.mob #mbar{left:auto;right:max(10px,calc(var(--sr) - 34px));top:50%;bottom:auto;transform:translateY(-50%);flex-direction:column;justify-content:space-around;gap:6px;padding:8px 3px;max-width:none;height:min(330px,calc(100vh - 20px));max-height:calc(100vh - 20px);border-radius:32px}
+body.mob #mbar button,body.mob #mbar .backm{width:56px;min-height:58px;flex:1 1 0;gap:4px;font-size:9.5px}
+body.mob #vbub{left:max(10px,calc(var(--sl) - 34px));right:auto;top:auto;bottom:max(22px,calc(env(safe-area-inset-bottom,0px) + 6px))}
 body.mob #vbub{flex-direction:row;align-items:center}
 body.mob #vviews{flex-direction:row}
 body.mob #vbub .vsep{width:1px;height:22px;margin:0 3px}
-body.mob #panel,body.mob #qpanel,body.mob #props{left:auto;right:calc(max(10px,calc(var(--sr) - 34px)) + 84px);top:8px;bottom:8px;height:auto;max-height:none;width:min(390px,52vw)!important}
+body.mob #panel,body.mob #qpanel,body.mob #props{left:auto;right:calc(max(10px,calc(var(--sr) - 34px)) + 72px);top:8px;bottom:8px;height:auto;max-height:none;width:min(390px,52vw)!important}
 body.mob #hud{bottom:8px}
 }
 body.mob #vbub:not(.open) .vb:not(.cur){display:none}
