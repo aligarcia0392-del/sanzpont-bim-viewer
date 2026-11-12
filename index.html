@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sanzpont BIM Viewer</title>
+<style>@font-face{font-family:'IBM Plex Sans';font-weight:400;font-style:normal;font-display:swap;src:url(fonts/ibm-plex-sans-400.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Sans';font-weight:500;font-style:normal;font-display:swap;src:url(fonts/ibm-plex-sans-500.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Sans';font-weight:600;font-style:normal;font-display:swap;src:url(fonts/ibm-plex-sans-600.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-weight:400;font-style:normal;font-display:swap;src:url(fonts/ibm-plex-mono-400.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-weight:500;font-style:normal;font-display:swap;src:url(fonts/ibm-plex-mono-500.woff2) format('woff2')}
+
+:root{--bg:#eceae5;--panel:#fbfaf7;--ink:#22252a;--mute:#7b776f;--line:#e2ded6;--acc:#c2571a}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:14px;min-height:100vh;-webkit-text-size-adjust:100%}
+button{font:inherit;border:1px solid var(--line);background:#fff;border-radius:8px;padding:8px 14px;cursor:pointer;color:var(--ink)}
+button.pri{background:var(--ink);color:#fff;border-color:var(--ink)}
+input,select{font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;width:100%}
+.brand{font-size:15px;display:flex;align-items:center;gap:7px} .brand .logo{color:var(--acc)}
+.auth{max-width:380px;margin:0 auto;padding:calc(60px + env(safe-area-inset-top)) 22px 40px}
+.auth h1{font-size:24px;margin:34px 0 18px;font-weight:600}
+.auth label{display:block;font-size:12px;color:var(--mute);margin-bottom:12px} .auth label input{margin-top:5px}
+.auth .pri{width:100%;padding:12px;margin-top:6px} .auth .alt{margin-top:18px;font-size:13px;color:var(--mute)} a{color:var(--acc)}
+.msg{margin-top:12px;font-size:13px;color:#8a3b10;min-height:1em}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:calc(14px + env(safe-area-inset-top)) 22px 14px;border-bottom:1px solid var(--line);background:var(--panel);position:sticky;top:0}
+.who{font-size:12.5px;color:var(--mute);display:flex;gap:10px;align-items:center} .who button{padding:5px 10px;font-size:12px}
+.list{max-width:1000px;margin:0 auto;padding:10px 22px 60px} .list h2{font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--mute);margin:26px 0 10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:8px}
+.ct{display:flex;justify-content:space-between;gap:8px;align-items:center} .ct b{font-size:15px} .cd{font-size:12.5px;color:var(--mute);flex:1}
+.ca{display:flex;gap:8px} .ca button{flex:1}
+.vis{font-size:11px;padding:2px 8px;border-radius:20px;background:#ece8e1;color:#5d584f;white-space:nowrap} .v-public{background:#e5efe4;color:#2f6b2c} .v-shared{background:#e6edf5;color:#2d527a}
+.empty{color:var(--mute);font-size:13px;padding:20px 0}
+.ov{position:fixed;inset:0;background:rgba(30,30,30,.35);display:flex;align-items:center;justify-content:center;padding:16px;z-index:9}
+.box{background:var(--panel);border-radius:14px;width:min(460px,100%);padding:16px 18px;max-height:90vh;overflow:auto}
+.bh{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px} .bh button{border:0;background:none;font-size:16px}
+.lb{display:block;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);margin:16px 0 6px}
+.seg{display:flex;gap:6px} .seg button{flex:1;padding:8px 4px} .seg button.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.hint{font-size:12px;color:var(--mute);margin-top:6px}
+#inv{display:flex;gap:6px} #inv select{width:auto} #inv button{white-space:nowrap}
+.mr{display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px solid var(--line);font-size:13px} .mr span{flex:1;overflow:hidden;text-overflow:ellipsis} .mr i{font-style:normal;color:var(--mute);font-size:12px} .mr button{padding:4px 8px;font-size:12px}
+.lk{display:flex;gap:6px} .lk input{font-size:12px}
+</style></head><body><div id="app"></div><script type="module" src="shell.js"></script></body></html>
