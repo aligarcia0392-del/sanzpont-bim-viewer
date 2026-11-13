@@ -236,7 +236,15 @@ body.mob #vbub.open .vb.cur{background:rgba(30,33,37,.1);color:var(--ink)}
 body.mob #vbub .vb svg{width:18px;height:18px}
 
 body.mob .vrow,body.mob .vrow+*{}
-body.mob h2.vh,body.mob .vrow,body.mob .sbsec{display:none!important}
+body.mob h2.vh,body.mob .vrow,body.mob .sbsec,body.mob .slsec{display:none!important}
+#slhud{display:none}
+body.mob #slhud{display:flex;position:fixed;left:50%;transform:translate(-50%,8px) scale(.96);bottom:calc(var(--sb) + 74px);z-index:9;flex-direction:column;align-items:center;gap:6px;padding:8px 14px 10px;border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.3),rgba(255,255,255,.12));border:1px solid rgba(255,255,255,.6);box-shadow:0 8px 28px rgba(20,24,28,.14);-webkit-backdrop-filter:blur(10px) saturate(2);backdrop-filter:blur(10px) saturate(2);opacity:0;pointer-events:none;transition:opacity .15s,transform .15s;font:12px 'IBM Plex Mono',monospace;color:var(--ink);min-width:170px}
+body.mob #slhud.on{opacity:1;transform:translate(-50%,0) scale(1)}
+body.mob #slhud .bar{width:150px;height:4px;border-radius:2px;background:#d6d3cc;overflow:hidden}
+body.mob #slhud .bar i{display:block;height:100%;background:#5f666e;width:0}
+body.mob #slhud .t{font-family:'IBM Plex Sans',sans-serif;font-size:10px;color:var(--mute)}
+body.mob #mbar.slicing{outline:2px solid rgba(95,102,110,.35)}
+@media (orientation:landscape){body.mob #slhud{bottom:auto;top:50%;left:auto;right:calc(max(10px,calc(var(--sr) - 34px)) + 74px);transform:translateY(-50%)}body.mob #slhud.on{transform:translateY(-50%)}}
 body.leaving #mbox,body.leaving #mbar,body.leaving #vbub,body.leaving #panel,body.leaving #qpanel,body.leaving #props,body.leaving canvas{opacity:0;transition:opacity .12s ease!important}
 
 #minfo.closed{max-height:0!important;opacity:0;padding-top:0;padding-bottom:0;border-top-color:transparent;overflow:hidden}
@@ -270,8 +278,8 @@ body.leaving #mbox,body.leaving #mbar,body.leaving #vbub,body.leaving #panel,bod
     <h2 style="display:flex;align-items:center">Elementos por categoría<button id="clrsel2" title="Quitar aislamiento">✕ Quitar</button></h2>
     <div id="selinfo"></div>
     <div id="kinds"></div>
-    <h2>Slice Z <span class="val" id="cutv"></span></h2>
-    <input type="range" id="cut" min="0" max="15" step="0.05" value="15">
+    <h2 class="slsec">Slice Z <span class="val" id="cutv"></span></h2>
+    <input class="slsec" type="range" id="cut" min="0" max="15" step="0.05" value="15">
     <div style="display:none"><h2>Planos</h2>
     <div class="prow"><select id="ptype"><option value="P">Planta (corte a +1.20 m)</option></select><select id="plvl"></select></div>
     <div class="btns" style="margin-top:7px"><button id="popen">Abrir plano</button></div>
@@ -304,6 +312,6 @@ body.leaving #mbox,body.leaving #mbar,body.leaving #vbub,body.leaving #panel,bod
 <aside id="qpanel"><header><div><h1 id="qtitle">Cuantificación</h1><div class="sub" id="qsub">Resumen general del proyecto</div></div><button id="qcat" title="Catálogo de conceptos">Catálogo</button><button id="qmin" title="Ocultar panel">–</button></header><div class="scroll" id="qbody"></div></aside>
 <button id="qtab">Cuantificación ◂</button>
 <nav id="mbar"><button class="backm" onclick="document.body.classList.add('leaving');setTimeout(()=>location.href='./',110)" title="Proyectos"><svg viewBox="0 0 24 24"><path d="M4 21V5.5L12 3v18M12 8.5l8 2.5v10M2.5 21h19M7 8v1M7 11.5v1M7 15v1M15.5 13v1M15.5 16.5v1"/></svg><span>Proyectos</span></button><button data-s="panel"><svg viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 13 9 5 9-5"/></svg><span>Capas</span></button><button data-s="model"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 13h8M8 16h5"/></svg><span>Modelo</span></button><button data-s="q"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span>Cantidades</span></button></nav>
-<script type="module" src="viewer.js?v=71c7627f38"></script>
+<script type="module" src="viewer.js?v=28e3986ab7"></script>
 </body>
 </html>
