@@ -269,6 +269,19 @@ body.mob #mbar.slicing{outline:2px solid rgba(95,102,110,.35)}
 body.leaving #mbox,body.leaving #mbar,body.leaving #vbub,body.leaving #panel,body.leaving #qpanel,body.leaving #props,body.leaving canvas{opacity:0;transition:opacity .12s ease!important}
 
 #minfo.closed{max-height:0!important;opacity:0;padding-top:0;padding-bottom:0;border-top-color:transparent;overflow:hidden}
+#qlvl{margin-left:auto;padding:3px 10px;font-size:12px;white-space:nowrap;border-radius:7px}
+#qlvl.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+#qlvl+#qcat{margin-left:6px}
+
+.lqh{position:sticky;top:-1px;background:var(--panel);z-index:2;padding-bottom:6px;border-bottom:1px solid var(--line);margin-bottom:6px}
+.lqt{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);margin:2px 0 6px}
+.lqc{display:flex;flex-wrap:wrap;gap:5px}
+.lqc .chip{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border:1px solid var(--line);border-radius:14px;font-size:11.5px;cursor:pointer;background:#fff}
+.lqc .chip input{display:none} .lqc .chip.on{background:#3a3f45;color:#fff;border-color:#3a3f45}
+.lqb{display:flex;gap:8px;align-items:center;margin-top:8px} .lqb #lqx{margin-left:auto;padding:3px 10px;font-size:12px;border-radius:7px}
+.seg2{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden} .seg2 button{border:0;border-radius:0;padding:4px 10px;font-size:12px;background:#fff} .seg2 button.on{background:var(--ink);color:#fff}
+.lqlv{cursor:pointer;display:flex;align-items:baseline;gap:6px} .lqlv small{color:var(--mute);font-weight:400;font-size:11px}
+.lqtab td.clk{cursor:pointer} .lqtab tr.grp td{font-weight:600;background:#f3f1ec}
 #qcat{margin-left:auto;padding:3px 10px;font-size:12px;white-space:nowrap;border-radius:7px}
 #qcat.on{background:var(--ink);color:#fff;border-color:var(--ink)}
 #minfo .mt{font-weight:600;font-size:13px}
@@ -330,9 +343,9 @@ body.leaving #mbox,body.leaving #mbar,body.leaving #vbub,body.leaving #panel,bod
       <button data-v="side" class="vb" title="Lateral"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M12 3 20 7.5v9L12 21l-8-4.5v-9Z" opacity=".45"/><path d="M20 7.5 12 12v9l8-4.5Z" fill="currentColor" fill-opacity=".3"/></svg></button>
     </div><i class="vsep"></i><button class="vsb" id="vsb" title="Section box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3 20 7.5v9L12 21l-8-4.5v-9Z" stroke-dasharray="2.4 2"/><path d="M4 7.5 12 12l8-4.5M12 12v9" stroke-dasharray="2.4 2"/><circle cx="12" cy="12" r="1.8" fill="currentColor" stroke="none"/></svg></button></div>
 <div id="mbox"><div class="mh"><b id="mlab">Modelo</b><select id="msel"></select><button id="arbtn" title="Ver en realidad aumentada">AR</button><button class="mx" id="mmin" title="Mostrar u ocultar la información">▾</button></div><div id="minfo" class="closed"></div></div>
-<aside id="qpanel"><header><div><h1 id="qtitle">Cuantificación</h1><div class="sub" id="qsub">Resumen general del proyecto</div></div><button id="qcat" title="Catálogo de conceptos">Catálogo</button><button id="qmin" title="Ocultar panel">–</button></header><div class="scroll" id="qbody"></div></aside>
+<aside id="qpanel"><header><div><h1 id="qtitle">Cuantificación</h1><div class="sub" id="qsub">Resumen general del proyecto</div></div><button id="qlvl" title="Cuantificación por nivel" style="display:none">Por nivel</button><button id="qcat" title="Catálogo de conceptos">Catálogo</button><button id="qmin" title="Ocultar panel">–</button></header><div class="scroll" id="qbody"></div></aside>
 <button id="qtab">Cuantificación ◂</button>
 <nav id="mbar"><button class="backm" onclick="document.body.classList.add('leaving');setTimeout(()=>location.href='./',40)" title="Proyectos"><svg viewBox="0 0 24 24"><path d="M4 21V5.5L12 3v18M12 8.5l8 2.5v10M2.5 21h19M7 8v1M7 11.5v1M7 15v1M15.5 13v1M15.5 16.5v1"/></svg><span>Proyectos</span></button><button data-s="panel"><svg viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 13 9 5 9-5"/></svg><span>Capas</span></button><button data-s="model"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 13h8M8 16h5"/></svg><span>Modelo</span></button><button data-s="q"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span>Cantidades</span></button></nav>
-<script type="module" src="viewer.js?v=811577644a"></script>
+<script type="module" src="viewer.js?v=6768569d66"></script>
 </body>
 </html>

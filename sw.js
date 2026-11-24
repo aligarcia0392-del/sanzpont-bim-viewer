@@ -1,7 +1,7 @@
 // Service worker de Sanzpont BIM Viewer: guarda el programa del visor para abrirlo sin conexión.
 // Estrategia: red primero (así siempre llega la última versión) y, si no hay red, la copia guardada.
 // Las peticiones a Supabase (cuentas y modelos) no pasan por aquí; los modelos se guardan en IndexedDB.
-const CACHE = 'sanzpont-app-6b85d23fdedd';
+const CACHE = 'sanzpont-app-02ea9eca6abd';
 const SHELL = ['./', './index.html', './viewer.html', './viewer.js', './shell.js', './version.json', './logo.svg',
   './fonts/ibm-plex-sans-400.woff2', './fonts/ibm-plex-sans-500.woff2', './fonts/ibm-plex-sans-600.woff2',
   './fonts/ibm-plex-mono-400.woff2', './fonts/ibm-plex-mono-500.woff2'];
@@ -9,7 +9,7 @@ self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c =>
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
 self.addEventListener('fetch', e => {
   const u = new URL(e.request.url);
-  if (e.request.method !== 'GET' || u.origin !== location.origin) return;
+  if (e.request.method !== 'GET' || u.origin !== location.origin || /\.wasm$|ifcworker\.js$/.test(u.pathname)) return;
   const fixed = u.searchParams.has('v') || /\/fonts\/|logo\.svg$/.test(u.pathname);
   e.respondWith((async () => {
     const c = await caches.open(CACHE);
