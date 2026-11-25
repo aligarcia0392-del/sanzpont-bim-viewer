@@ -1,7 +1,7 @@
 // Service worker de Sanzpont BIM Viewer: guarda el programa del visor para abrirlo sin conexión.
 // Estrategia: red primero (así siempre llega la última versión) y, si no hay red, la copia guardada.
 // Las peticiones a Supabase (cuentas y modelos) no pasan por aquí; los modelos se guardan en IndexedDB.
-const CACHE = 'sanzpont-app-9e95aafa5f19';
+const CACHE = 'sanzpont-app-674add69da18';
 const SHELL = ['./', './index.html', './viewer.html', './viewer.js', './shell.js', './version.json', './logo.svg',
   './fonts/ibm-plex-sans-400.woff2', './fonts/ibm-plex-sans-500.woff2', './fonts/ibm-plex-sans-600.woff2',
   './fonts/ibm-plex-mono-400.woff2', './fonts/ibm-plex-mono-500.woff2'];
@@ -17,7 +17,7 @@ self.addEventListener('fetch', e => {
     if (fixed) { const hit = await c.match(e.request); if (hit) return hit; }
     try {
       // páginas: red primero pero sin esperar de más; si tarda, se usa la copia guardada
-      const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), fixed ? 8000 : 1500);
+      const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), fixed ? 8000 : 5000);
       const r = await fetch(e.request, { signal: ctl.signal, cache: fixed ? 'default' : 'no-cache' }); clearTimeout(t);
       if (r.ok) c.put(e.request.mode === 'navigate' ? new Request(u.pathname) : e.request, r.clone());
       return r;
