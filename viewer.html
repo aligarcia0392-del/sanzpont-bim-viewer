@@ -280,6 +280,13 @@ body.leaving #mbox,body.leaving #mbar,body.leaving #vbub,body.leaving #panel,bod
 button.lqlv{display:flex;width:100%;align-items:center;justify-content:space-between;margin:14px 0 6px;padding:8px 12px;border:1px solid var(--line);border-radius:9px;background:#fff;font:600 13px/1.2 inherit;color:var(--ink);cursor:pointer;text-align:left}
 button.lqlv::after{content:'Ver en modelo';font-weight:400;font-size:11px;color:var(--mute)} button.lqlv.lqon{background:#3a3f45;color:#fff;border-color:#3a3f45} button.lqlv.lqon::after{content:'Quitar';color:#d9dde2}
 .lqtab td.n{white-space:nowrap}
+
+.xl.cat{display:inline-block;max-width:100%;vertical-align:top} .xl.cat table{width:auto}
+.xl.cat td .l2{max-width:260px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;white-space:normal;line-height:1.3}
+.xl.cat td.pt{white-space:normal}
+.colm{position:relative} #colb{padding:5px 10px;font-size:12px;border-radius:6px;height:100%}
+.colp{display:none;position:absolute;right:0;top:calc(100% + 4px);background:#fff;border:1px solid var(--line);border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.12);padding:6px;z-index:5;min-width:160px}
+.colp.open{display:block} .colp label{display:flex;align-items:center;gap:8px;padding:6px 8px;font-size:12.5px;cursor:pointer;border-radius:6px;white-space:nowrap} .colp label:hover{background:#f3f1ec} .colp input{accent-color:#3a3f45;width:auto!important;margin:0;flex:none} .colp label{justify-content:flex-start}
 #play.on{background:#3a3f45!important;border-color:#3a3f45!important;color:#fff!important}
 #qlvl{margin-left:auto;padding:3px 10px;font-size:12px;white-space:nowrap;border-radius:7px}
 #qlvl.on{background:var(--ink);color:#fff;border-color:var(--ink)}
@@ -373,6 +380,6 @@ body.mob #lqpick{align-items:flex-end;padding:0} body.mob #lqpick .lqbox{width:1
 <aside id="qpanel"><header><div><h1 id="qtitle">Cuantificación</h1><div class="sub" id="qsub"></div></div><button id="qlvl" title="Cuantificación por nivel" style="display:none">Por nivel</button><button id="qcat" title="Catálogo de conceptos">Catálogo</button><button id="qmin" title="Ocultar panel">–</button></header><div class="scroll" id="qbody"></div></aside>
 <button id="qtab">Cuantificación ◂</button>
 <nav id="mbar"><button class="backm" onclick="document.body.classList.add('leaving');setTimeout(()=>location.href='./',40)" title="Proyectos"><svg viewBox="0 0 24 24"><path d="M4 21V5.5L12 3v18M12 8.5l8 2.5v10M2.5 21h19M7 8v1M7 11.5v1M7 15v1M15.5 13v1M15.5 16.5v1"/></svg><span>Proyectos</span></button><button data-s="panel"><svg viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 13 9 5 9-5"/></svg><span>Capas</span></button><button data-s="model"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 13h8M8 16h5"/></svg><span>Modelo</span></button><button data-s="q"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span>Cantidades</span></button></nav>
-<script type="module" src="viewer.js?v=da197d0384"></script>
+<script type="module" src="viewer.js?v=51f07710e7"></script>
 </body>
 </html>
